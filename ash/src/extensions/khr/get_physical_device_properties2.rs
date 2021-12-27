@@ -107,6 +107,7 @@ impl GetPhysicalDeviceProperties2 {
             &mut count,
             out.as_mut_ptr(),
         );
+        assert_eq!(count, out.len() as u32);
     }
 
     /// Retrieve the number of elements to pass to [`Self::get_physical_device_sparse_image_format_properties2()`]
@@ -144,6 +145,7 @@ impl GetPhysicalDeviceProperties2 {
                 &mut count,
                 out.as_mut_ptr(),
             );
+        assert_eq!(count, out.len() as u32);
     }
 
     pub fn name() -> &'static CStr {
